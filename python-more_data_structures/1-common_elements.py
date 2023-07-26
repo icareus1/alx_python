@@ -7,4 +7,4 @@ def common_elements(set_1, set_2):
     except TypeError:
         return None
     except:
-        return None
+        return set()
