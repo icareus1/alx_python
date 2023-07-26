@@ -4,5 +4,5 @@ def common_elements(set_1, set_2):
         # return common_ele_set
         common_ele_set = set_1 & set_2
         return common_ele_set
-    except TabError:
+    except TypeError:
         return None
