@@ -1,1 +1,1 @@
-Learn data structures in Python with ALX
+Learn data structures in Python with ALX. This part deals with Lists and Tuples.
