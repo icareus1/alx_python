@@ -1,5 +1,5 @@
 """Base Geometry class"""
 class BaseGeometry:
-    """"Empty base geometry class"""
+    """"Empty class"""
     def __init__(self):
         pass
