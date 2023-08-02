@@ -3,5 +3,4 @@
 
 class BaseGeometry:
     """"Empty base geometry class"""
-    def __repr__(self):
-        return ''
+    pass
