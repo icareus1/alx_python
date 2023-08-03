@@ -1,4 +1,6 @@
 """"A series of classes that performs some operations and uses the concept of inheritance"""
+
+
 class BaseGeometry:
     """Base Geometry class"""
 
