@@ -6,5 +6,6 @@ class BaseGeometry:
     # def __dir__(cls) -> None:
     #     attributes = super().__dir__()
     #     return [attribute for attribute in attributes if attribute != '__init_subclass__']
-    def __dir__(self):
-        return list(filter(lambda x: x != '__init_subclass__', self.__dict__.keys()))
+    def __dir__(self) -> list:
+        attributes = super().__dir__()
+        return [attribute for attribute in attributes if attribute != '__init_subclass__']
