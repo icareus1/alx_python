@@ -13,7 +13,7 @@ class BaseGeometry:
         '__init_subclass__' attribute.
         """
         attributes = super().__dir__()
-        return [attribute for attribute in attributes if attribute != '__init_subclass__']
+        return [attri for attri in attributes if attri != '__init_subclass__']
 
     def area(self):
         """
