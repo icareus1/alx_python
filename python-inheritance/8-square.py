@@ -1,16 +1,25 @@
-""""A series of classes that performs some operations and uses the concept of inheritance"""
+""""
+A series of classes that performs some operations
+and uses the concept of inheritance
+"""
 
 
 class BaseGeometry:
     """Base Geometry class"""
 
     def __dir__(self) -> None:
-        """Overrides the dir() function to exclude '__init_subclass__' attribute."""
+        """
+        Overrides the dir() function to exclude
+        '__init_subclass__' attribute.
+        """
         attributes = super().__dir__()
         return [attribute for attribute in attributes if attribute != '__init_subclass__']
 
     def area(self):
-        """Raises an exception since 'area()' is not implemented in the base class."""
+        """
+        Raises an exception since 'area()'
+        is not implemented in the base class.
+        """
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
@@ -22,7 +31,10 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
-    """A class Rectangle that inherits from BaseGeometry and performs some operations."""
+    """
+    A class Rectangle that inherits from BaseGeometry
+    and performs some operations.
+    """
 
     def __init__(self, width, height):
         self.integer_validator("width", width)
@@ -40,7 +52,10 @@ class Rectangle(BaseGeometry):
 
 
 class Square(Rectangle):
-    """A class Square that inherits from Rectangle and performs some operations."""
+    """
+    A class Square that inherits from Rectangle and
+    performs some operations.
+    """
 
     def __init__(self, size):
         self.integer_validator("size", size)
