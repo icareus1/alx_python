@@ -14,10 +14,10 @@ class BaseGeometry:
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
+
+
 class Rectangle(BaseGeometry):
     """A class Rectangle that inherits from BaseGeometry and performs some operations"""
-    
-    
     def __init__(self, width, height):
         self.integer_validator("width", width)
         self.integer_validator("height", height)
@@ -27,10 +27,10 @@ class Rectangle(BaseGeometry):
         return self.__width * self.__height
     def __str__(self):
         return f"[Rectangle] {self.__width}/{self.__height}"
+
+
 class Square(Rectangle):
-    """A class Square that inherits from Rectangle and performs some operations"""
-    
-    
+    """A class Square that inherits from Rectangle and performs some operations""" 
     def __init__(self, size):
         self.integer_validator("size", size)
         super().__init__(size, size)
