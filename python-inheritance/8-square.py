@@ -1,4 +1,7 @@
 """Base Geometry class"""
+
+
+
 class BaseGeometry:
     """"Improved base geometry class"""
     def __dir__(cls) -> None:
