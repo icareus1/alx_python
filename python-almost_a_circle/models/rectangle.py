@@ -84,3 +84,8 @@ class Rectangle(Base):
     def __str__(self):
         """Returns the string of Rectangle in the specified format"""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+    
+    def update(self, *args):
+        attributes = ["id", "width", "height", "x", "y"]
+        for i in range(min(len(args), len(self.attributes))):
+            setattr(self, attributes[i], args[i])
