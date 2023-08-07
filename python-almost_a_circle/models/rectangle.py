@@ -1,12 +1,8 @@
-"""
-The `Base` class is the base class for all other classes in this project.
-It manages the `id` attribute for all its subclasses and avoids code duplication.
-Rectangle module - Contains the Rectangle class
-"""
+"""Rectangle module - Contains the Rectangle class"""
 
 
 
-from base import Base
+from models.base import Base
 
 class Rectangle(Base):
     """Rectangle class - Inherits from Base"""
