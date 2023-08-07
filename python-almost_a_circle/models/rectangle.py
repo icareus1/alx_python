@@ -62,7 +62,7 @@ class Rectangle(Base):
     def validate_w_h(self, name, value):
         """Check if the given value is > 0."""
         if value < 1:
-            raise ValueError(f"{name} must be > 0.")
+            raise ValueError(f"{name} must be > 0")
     
     def validate_x_y(self, name, value):
         """Check if the given value is < 0."""
