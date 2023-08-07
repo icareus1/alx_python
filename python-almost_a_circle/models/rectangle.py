@@ -1,4 +1,8 @@
-"""Rectangle module - Contains the Rectangle class"""
+"""
+The `Base` class is the base class for all other classes in this project.
+It manages the `id` attribute for all its subclasses and avoids code duplication.
+Rectangle module - Contains the Rectangle class
+"""
 
 
 
