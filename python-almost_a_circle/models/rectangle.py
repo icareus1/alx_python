@@ -20,8 +20,8 @@ class Rectangle(Base):
     
     @width.setter
     def width(self, value):
-        self.validate_int("width", value)
-        self.validate_w_h("width", value)
+        self.__validate_int("width", value)
+        self.__validate_w_h("width", value)
         self.__width = value
         
     @property
@@ -30,8 +30,8 @@ class Rectangle(Base):
     
     @height.setter
     def height(self, value):
-        self.validate_int("height", value)
-        self.validate_w_h("height", value)
+        self.__validate_int("height", value)
+        self.__validate_w_h("height", value)
         self.__height = value
     
     @property
@@ -40,8 +40,8 @@ class Rectangle(Base):
     
     @x.setter
     def x(self, value):
-        self.validate_int("x", value)
-        self.validate_x_y("x", value)
+        self.__validate_int("x", value)
+        self.__validate_x_y("x", value)
         self.__x = value
         
     @property
@@ -50,8 +50,8 @@ class Rectangle(Base):
     
     @y.setter
     def y(self, value):
-        self.validate_int("y", value)
-        self.validate_x_y("y", value)
+        self.__validate_int("y", value)
+        self.__validate_x_y("y", value)
         self.__y = value
         
     def validate_int(self, name, value):
