@@ -55,13 +55,16 @@ class Rectangle(Base):
         self.__y = value
         
     def validate_int(self, name, value):
+        """Check if the given value is an integer."""
         if not isinstance(value, int):
             raise TypeError(f"{name} must be an integer")
     
     def validate_w_h(self, name, value):
+        """Check if the given value is > 0."""
         if value < 1:
-            raise ValueError(f"{name} must be > 0")
+            raise ValueError(f"{name} must be > 0.")
     
     def validate_x_y(self, name, value):
+        """Check if the given value is < 0."""
         if value < 0:
             raise ValueError(f"{name} must be >= 0")
