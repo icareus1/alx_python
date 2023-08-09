@@ -12,8 +12,9 @@ import sys
 
 if __name__ == '__main__':
     res = requests.get(sys.argv[1])
+    content = res.txt
     
     if 'X-Request-Id' in res.headers:
         print(res.headers['X-Request-Id'])
     else:
-        print('No "X-Request-Id" found in the response header')
+        print(content)
