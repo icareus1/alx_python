@@ -20,7 +20,7 @@ if __name__ == '__main__':
         user_id = data.get('id')
         
         if user_id is not None:
-            print("User ID:", user_id)
+            print(user_id)
         else:
             print(None)
     except ValueError:
