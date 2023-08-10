@@ -11,12 +11,17 @@ if __name__ == '__main__':
     token = sys.argv[2]
     
     url = 'https://api.github.com/user'
-    headers = {'Authorization': 'Basic {}:{}'.format(username, token)}
+    headers = {'Authorization': 'token {}'.format(token)}
     
     res = requests.get(url, headers=headers)
     
     try:
         data = res.json()
-        print("User ID:", data['id'])
+        user_id = data.get('id')
+        
+        if user_id is not None:
+            print("User ID:", user_id)
+        else:
+            print("User ID not found in the response")
     except ValueError:
         print("Error retrieving user information")
