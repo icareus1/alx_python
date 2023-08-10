@@ -22,6 +22,6 @@ if __name__ == '__main__':
         if user_id is not None:
             print("User ID:", user_id)
         else:
-            print("User ID not found in the response")
+            print(None)
     except ValueError:
         print("Error retrieving user information")
