@@ -2,6 +2,9 @@
 
 
 
+class BaseGeometry():
+    """Base Geometry class"""
+    
 class a_metaclass(type):
     """Override dir"""
     def __dir__(cls):
