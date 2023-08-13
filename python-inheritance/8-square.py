@@ -4,6 +4,9 @@ and uses the concept of inheritance
 """
 
 
+
+Rectangle = __import__('7-rectangle').Rectangle
+
 class a_metaclass(type):
     """Override dir"""
     def __dir__(cls) -> None:
