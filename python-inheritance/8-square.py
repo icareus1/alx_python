@@ -3,10 +3,14 @@ A series of classes that performs some operations
 and uses the concept of inheritance
 """
 
+
+
 class a_metaclass(type):
     """Override dir"""
     def __dir__(cls) -> None:
-        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
+        attributes = super().__dir__()
+        return [attri for attri in attributes if attri != '__init_subclass__']
+
 
 class BaseGeometry(metaclass=a_metaclass):
     """Base Geometry class"""
@@ -32,6 +36,7 @@ class BaseGeometry(metaclass=a_metaclass):
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
 
+
 class Rectangle(BaseGeometry):
     """
     A class Rectangle that inherits from BaseGeometry
@@ -50,6 +55,7 @@ class Rectangle(BaseGeometry):
     def __str__(self):
         """Returns a string representation of the rectangle."""
         return f"[Rectangle] {self.__width}/{self.__height}"
+
 
 class Square(Rectangle):
     """
