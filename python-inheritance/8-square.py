@@ -5,8 +5,6 @@ and uses the concept of inheritance
 
 
 
-Rectangle = __import__('7-rectangle').Rectangle
-
 class a_metaclass(type):
     """Override dir"""
     def __dir__(cls) -> None:
@@ -39,25 +37,7 @@ class BaseGeometry(metaclass=a_metaclass):
             raise ValueError(f"{name} must be greater than 0")
 
 
-class Rectangle(BaseGeometry):
-    """
-    A class Rectangle that inherits from BaseGeometry
-    and performs some operations.
-    """
-    def __init__(self, width, height):
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
-        self.__width = width
-        self.__height = height
-
-    def area(self):
-        """Calculates the area of the rectangle."""
-        return self.__width * self.__height
-
-    def __str__(self):
-        """Returns a string representation of the rectangle."""
-        return f"[Rectangle] {self.__width}/{self.__height}"
-
+Rectangle = __import__('7-rectangle').Rectangle
 
 class Square(Rectangle):
     """
