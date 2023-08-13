@@ -4,7 +4,6 @@ and uses the concept of inheritance
 """
 
 
-
 class a_metaclass(type):
     """Override dir"""
     def __dir__(cls) -> None:
@@ -38,6 +37,7 @@ class BaseGeometry(metaclass=a_metaclass):
 
 
 Rectangle = __import__('7-rectangle').Rectangle
+
 
 class Square(Rectangle):
     """
