@@ -4,7 +4,6 @@ and uses the concept of inheritance
 """
 
 
-
 class a_metaclass(type):
     """Override dir"""
     def __dir__(cls) -> None:
