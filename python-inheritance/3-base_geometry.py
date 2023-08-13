@@ -5,7 +5,6 @@ class a_metaclass(type):
         return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
 class BaseGeometry(metaclass = a_metaclass):
     """"Empty base geometry class"""
-    pass
-    # def __dir__(cls) -> None:
-    #     attributes = super().__dir__()
-    #     return [attribute for attribute in attributes if attribute != '__init_subclass__']
+    def __dir__(cls) -> None:
+        attributes = super().__dir__()
+        return [attribute for attribute in attributes if attribute != '__init_subclass__']
