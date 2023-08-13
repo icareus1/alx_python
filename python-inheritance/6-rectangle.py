@@ -27,4 +27,4 @@ class Rectangle(BaseGeometry):
         self.__width = width
         self.__height = height
         
-Rectangle = __import__('7-rectangle').Rectangle
+Rectangle = __import__('6-rectangle').Rectangle
