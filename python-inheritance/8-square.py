@@ -4,7 +4,14 @@ and uses the concept of inheritance
 """
 
 
-class BaseGeometry:
+
+class a_metaclass(type):
+    """Override dir"""
+    
+    def __dir__(cls) -> None:
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
+
+class BaseGeometry(metaclass = a_metaclass):
     """Base Geometry class"""
 
     def __dir__(self) -> None:
