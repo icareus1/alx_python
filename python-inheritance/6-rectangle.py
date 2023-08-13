@@ -6,10 +6,6 @@ class a_metaclass(type):
 
 class BaseGeometry(metaclass=a_metaclass):
     """Improved base geometry class""" 
-    def __dir__(cls):
-        attributes = super().__dir__()
-        return [attribute for attribute in attributes if attribute != '__init_subclass__']
-
     
     def area(self):
         raise Exception("area() is not implemented")
@@ -29,3 +25,7 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
+        
+    def __dir__(cls):
+        attributes = super().__dir__()
+        return [attribute for attribute in attributes if attribute != '__init_subclass__']
