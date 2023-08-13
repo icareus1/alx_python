@@ -17,6 +17,9 @@ class BaseGeometry(metaclass = a_metaclass):
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
+
+BaseGeometry = __import__("5-base_geometry").BaseGeometry
+
 class Rectangle(BaseGeometry):
     """A class Rectangle that inherits from BaseGeometry and perform some operations"""
     def __init__(self, width, height):
