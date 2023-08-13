@@ -30,5 +30,5 @@ BaseGeometry = __import__("5-base_geometry").BaseGeometry
 class Rectangle(BaseGeometry):
     """A class Rectangle that inherits from BaseGeometry and perform some operations"""
     def __init__(self, width, height):
-        self._height = super().integer_validator("width", width)
-        self._width =  super().integer_validator("height", height)
+        self.__height = super().integer_validator("width", width)
+        self.__width =  super().integer_validator("height", height)
