@@ -29,6 +29,11 @@ if __name__ == '__main__':
     rows = cur.fetchall()
     for row in rows:
         city_names.append(row[0])
-    print(city_names)
+    for i in range(len(city_names)):
+        if not city_names[-1]:
+            print(city_names[i], end=", ")
+        else:
+            print(city_names[i])
+            
     cur.close()
     con.close()
