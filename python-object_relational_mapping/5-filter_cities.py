@@ -1,6 +1,6 @@
 """
 A script using the module MySQLdb that takes in the name of a state
-as an argument and displays all the cities from the database hbtn_0e_4_usa 
+as an argument and displays all the cities from the database hbtn_0e_4_usa
 where name matches the argument and deal with injection
 """
 
