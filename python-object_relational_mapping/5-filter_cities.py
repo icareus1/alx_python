@@ -29,6 +29,6 @@ if __name__ == '__main__':
     for row in rows:
         print("{}".format(row))
         if not row[-1]:
-            end=", "
+            print(", ")
     cur.close()
     con.close()
