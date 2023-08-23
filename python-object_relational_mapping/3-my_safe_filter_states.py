@@ -6,8 +6,8 @@ hbtn_0e_0_usa where name matches the argument and deal with injection
 
 
 import MySQLdb
-from sys import argv 
-  
+from sys import argv
+
 if __name__ == '__main__':
     username = argv[1]
     password = argv[2]
@@ -21,7 +21,7 @@ if __name__ == '__main__':
                              db=db_name
                          )
     cur = con.cursor()
-    query = "SELECT * FROM states WHERE name LIKE BINARY '%s'"
+    query = "SELECT * FROM states WHERE name LIKE BINARY %s"
     cur.execute(query, (name,))
     rows = cur.fetchall()
     for row in rows:
