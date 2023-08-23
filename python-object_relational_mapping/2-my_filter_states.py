@@ -21,7 +21,7 @@ if __name__ == '__main__':
                             db=db_name
                         )
     cur = con.cursor()
-    query = f"SELECT * FROM states WHERE name LIKE {name} ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name LIKE {} ORDER BY id ASC".format(name)
     cur.execute(query)
     rows = cur.fetchall()
     for row in rows:
