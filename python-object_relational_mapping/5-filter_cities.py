@@ -27,8 +27,9 @@ if __name__ == '__main__':
     cur.execute(query, (name,))
     rows = cur.fetchall()
     for row in rows:
-        print("{}".format(row))
-        if not row[-1]:
-            print(", ")
+        if not rows[-1]:
+            print("{}".format(row), end=", ")
+        else:
+            print("{}".format(row))
     cur.close()
     con.close()
