@@ -31,9 +31,8 @@ if __name__ == '__main__':
         city_names.append(row[0])
     for i in range(len(city_names)):
         if not city_names[-1]:
-            print('{},'.format(city_names[i]), end=" ")
+            print('{}, '.format(city_names[i]), end="")
         else:
             print(city_names[i])
-            
     cur.close()
     con.close()
