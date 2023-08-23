@@ -27,12 +27,8 @@ if __name__ == '__main__':
         WHERE states.name LIKE BINARY %s ORDER BY cities.id"
     cur.execute(query, (name,))
     rows = cur.fetchall()
-    for row in rows:
-        city_names.append(row[0])
-    for i in range(len(city_names)):
-        if not city_names[-1]:
-            print('{}, '.format(city_names[i]), end="")
-        else:
-            print(city_names[i])
+    city_names = [row[0] for row in rows]
+    city_list = ", ".join(city_names)
+    print(city_list)
     cur.close()
     con.close()
