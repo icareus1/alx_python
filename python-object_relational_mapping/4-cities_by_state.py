@@ -20,10 +20,11 @@ if __name__ == '__main__':
                         )
     cur = con.cursor()
     query = "SELECT cities.id, cities.name, states.name FROM cities \
-        INNER JOIN states ON cities.states_id = states.id ORDER BY cities.id"
+        INNER JOIN states ON cities.state_id = states.id ORDER BY cities.id"
     cur.execute(query)
     rows = cur.fetchall()
     for row in rows:
         print(row)
+    print("MySql Error:", e)
     cur.close()
     con.close()
