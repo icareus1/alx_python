@@ -1,7 +1,7 @@
 """
 A script using the module MySQLdb that takes in an argument
 and displays all values in the states from the database
-hbtn_0e_0_usa where name matches the argument 
+hbtn_0e_0_usa where name matches the argument
 """
 
 
