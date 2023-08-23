@@ -20,7 +20,7 @@ if __name__ == '__main__':
                         )
     cur = con.cursor()
     query = "SELECT cities.id, cities.name, states.name FROM cities \
-        WHERE INNER JOIN states on cities.id = states.id ORDER BY id ASC"
+        INNER JOIN states ON cities.id = states.id ORDER BY cities.id ASC"
     cur.execute(query)
     rows = cur.fetchall()
     for row in rows:
