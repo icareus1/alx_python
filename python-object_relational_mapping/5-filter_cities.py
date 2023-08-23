@@ -9,6 +9,7 @@ import MySQLdb
 from sys import argv
 
 if __name__ == '__main__':
+    city_names = []
     username = argv[1]
     password = argv[2]
     db_name = argv[3]
@@ -27,9 +28,7 @@ if __name__ == '__main__':
     cur.execute(query, (name,))
     rows = cur.fetchall()
     for row in rows:
-        if not rows[-1]:
-            print("{}".format(row), end=", ")
-        else:
-            print("{}".format(row))
+        city_names.append(row)
+    print(city_names)
     cur.close()
     con.close()
