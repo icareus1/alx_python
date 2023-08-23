@@ -1,6 +1,6 @@
 """
 A script using the module MySQLdb to list all
-states from the database hbtn_0e_0_usa
+cities from the database hbtn_0e_4_usa
 """
 
 
