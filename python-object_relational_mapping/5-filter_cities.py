@@ -28,7 +28,7 @@ if __name__ == '__main__':
     cur.execute(query, (name,))
     rows = cur.fetchall()
     for row in rows:
-        city_names.append(row)
+        city_names.append(row[0])
     print(city_names)
     cur.close()
     con.close()
