@@ -16,8 +16,8 @@ if __name__ == "__main__":
     path = (f'mysql+mysqldb://{username}:{password}@localhost:3306/{db_name}')
     engine = create_engine(path)
     Base.metadata.create_all(engine)
-    Session = sessionmaker()
-    sess = Session.configure(bind=engine)
+    Session = sessionmaker(bind=engine)
+    sess = Session()
     states = sess.query(State).order_by(State.id).all()
     for state in states:
         print(f'{state.id}: {state.name}')
