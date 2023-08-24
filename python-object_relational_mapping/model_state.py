@@ -20,4 +20,4 @@ class State(Base):
     name = Column(String(128), nullable=False)
     
     def __init__(self, name):
-        self.__name = name
+        self.name = name
