@@ -2,10 +2,9 @@
 Using SQLAlchemy, lists all State objects from the database hbtn_0e_6_usa
 """
 
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
-from sqlalchemy import Column, Integer, String
 from model_state import Base, State
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 from sys import argv
 
 if __name__ == "__main__":
@@ -20,7 +19,7 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     sess = Session()
-    states = sess.query(State).all()
+    states = sess.query(State).order_by(State.id).all()
 
     for state in states:
         print(f'{state.id}: {state.name}')
