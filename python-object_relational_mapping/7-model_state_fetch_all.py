@@ -8,19 +8,16 @@ from sqlalchemy.orm import sessionmaker
 from sys import argv
 
 if __name__ == "__main__":
-    username = argv[0]
-    password = argv[1]
-    db_name = argv[2]
+    username = argv[1]
+    password = argv[2]
+    db_name = argv[3]
 
-    engine = create_engine(f'mysql+mysqldb://{username}:{password}@localhost/{db_name}')
-
+    engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost:3306/{db_name}")
     Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
-    sess = Session()
-    states = sess.query(State).order_by(State.id).all()
-
+    session = Session()
+    states = session.query(State).order_by(State.id).all()
     for state in states:
-        print(f'{state.id}: {state.name}')
-
-    sess.close()
+        print(f"{state.id}: {state.name}")
+session.close()
