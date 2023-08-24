@@ -4,7 +4,6 @@ Base class, links to the MySQL table states and create rows
 """
 
 
-from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
