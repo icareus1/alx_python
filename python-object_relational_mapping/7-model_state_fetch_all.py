@@ -12,8 +12,7 @@ if __name__ == "__main__":
     password = argv[1]
     db_name = argv[2]
 
-    path = f'mysql+mysqldb://{username}:{password}@localhost/{db_name}.format()'
-    engine = create_engine(path)
+    engine = create_engine(f'mysql+mysqldb://{username}:{password}@localhost/{db_name}')
 
     Base.metadata.create_all(engine)
 
