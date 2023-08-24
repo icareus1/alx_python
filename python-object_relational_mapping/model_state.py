@@ -16,7 +16,7 @@ class State(Base):
     to create a table and insert values in it
     """
     
-    __tableau__ = 'states'
+    __tableau__ = "states"
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
     
