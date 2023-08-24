@@ -14,6 +14,7 @@ class State(Base):
     """
     A class state inheriting Base that is used
     to create a table and insert values in it
+    
     """
     __tableau__ = 'states'
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
