@@ -13,7 +13,11 @@ Base = declarative_base()
 class State(Base):
     """
     A class state inheriting Base that is used
-    to create a table and insert values in it
+    to create a table and insert values in it.
+    
+    Attributes:
+        id (int): An auto-generated unique integer.
+        name (str): the name of the state.
     """
     __tableau__ = 'states'
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
