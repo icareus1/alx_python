@@ -17,14 +17,10 @@ Base = declarative_base()
 
 class State(Base):
     """
-    Class representing the 'states' table in the database.
-    Attributes:
-        id (int): An auto-generated unique integer representing the primary key.
-        name (str): A string representing the name of the state.
+    A class state inheriting Base that is used
+    to create a table and insert values in it
     """
     if __name__== '__main__':
         __tableau__ = 'states'
         id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
         name = Column(String(128), nullable=False)
-        engine = create_engine(f'mysql+mysqlconnector://{username}:{password}@localhost:3306/{db_name}')
-        Base.metadata.create_all(engine)
