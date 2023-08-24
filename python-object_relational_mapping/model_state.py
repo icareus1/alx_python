@@ -12,8 +12,7 @@ Base = declarative_base()
 
 class State(Base):
     """
-    A class state inheriting Base that is used
-    to create a table and insert values in it.
+    Class representing the 'states' table in the database.
     
     Attributes:
         id (int): An auto-generated unique integer.
