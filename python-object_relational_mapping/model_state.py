@@ -16,7 +16,7 @@ db_name = argv[3]
 Base = declarative_base()
 
 class State(Base):
-    
+    """A class state inheriting Base"""
     if __name__== '__main__':
         id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
         name = Column(String, nullable=False)
