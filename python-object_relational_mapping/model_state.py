@@ -14,10 +14,6 @@ class State(Base):
     A class state inheriting Base that is used
     to create a table and insert values in it
     """
-    if __name__== '__main__':
-        __tableau__ = 'states'
-        id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
-        name = Column(String, nullable=False)
-        
-        def __init__(self):
-            self.name = name
+    __tableau__ = 'states'
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+    name = Column(String, nullable=False)
