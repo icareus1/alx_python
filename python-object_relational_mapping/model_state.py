@@ -16,4 +16,4 @@ class State(Base):
     """
     __tableau__ = 'states'
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
-    name = Column(String, nullable=False)
+    name = Column(String(128), nullable=False)
