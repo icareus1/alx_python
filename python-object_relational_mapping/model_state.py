@@ -1,5 +1,10 @@
-from sqlalchemy import create_engine
-from sqlalchemy import Column, Integer, String
+"""
+Using SQLAlchemy, create a State class that inherits from
+Base class, links to the MySQL table states and create rows
+"""
+
+
+from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
