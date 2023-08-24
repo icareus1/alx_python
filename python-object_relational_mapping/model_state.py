@@ -17,8 +17,10 @@ Base = declarative_base()
 
 class State(Base):
     """
-    A class state inheriting Base that is used
-    to create a table and insert values in it
+    Class representing the 'states' table in the database.
+    Attributes:
+        id (int): An auto-generated unique integer representing the primary key.
+        name (str): A string representing the name of the state.
     """
     if __name__== '__main__':
         __tableau__ = 'states'
