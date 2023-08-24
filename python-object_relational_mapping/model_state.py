@@ -16,8 +16,10 @@ db_name = argv[3]
 Base = declarative_base()
 
 class State(Base):
-    """A class state inheriting Base that is used
-    to create a table and insert values in it"""
+    """
+    A class state inheriting Base that is used
+    to create a table and insert values in it
+    """
     if __name__== '__main__':
         __tableau__ = 'states'
         id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
