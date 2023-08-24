@@ -19,5 +19,5 @@ class State(Base):
         id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
         name = Column(String, nullable=False)
         
-    def __init__(self):
-        self.name = name
+        def __init__(self):
+            self.name = name
