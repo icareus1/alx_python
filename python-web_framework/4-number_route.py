@@ -38,7 +38,7 @@ def the_p_snake(text=None):
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
-    return n
+    return f'{n} is a number'
 
 
 @app.errorhandler(404)
