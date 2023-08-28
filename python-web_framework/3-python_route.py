@@ -30,7 +30,7 @@ def the_p_snake(text=None):
         ftext = text.replace('_', ' ')
         return f'Python {ftext}'
     except Exception as e:
-        return 'Python is cool
+        return 'Python is cool'
 
 
 @app.errorhandler(404)
