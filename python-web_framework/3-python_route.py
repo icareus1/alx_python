@@ -23,13 +23,14 @@ def c(text):
 
 
 @app.route('/python/<text>', strict_slashes=False)
-def the_p_snake(text='is cool'):
+def the_p_snake(text=None):
+    if text is None:
+        text = 'is cool'
     try:
         ftext = text.replace('_', ' ')
-        result = f'Python {ftext}'
+        return f'Python {ftext}'
     except Exception as e:
-        result = f'Python is cool'
-    return result
+        return 'Python is cool'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
