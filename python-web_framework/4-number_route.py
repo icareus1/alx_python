@@ -37,6 +37,8 @@ def the_p_snake(text=None):
 def number(n):
     if isinstance(n, int):
         return n
+    else:
+        raise TypeError('n must be an integer')
 
 
 @app.errorhandler(404)
