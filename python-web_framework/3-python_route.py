@@ -22,11 +22,11 @@ def c(text):
     return f'C {ftext}'
 
 
-@app.route('/python/<text>', strict_slashes=False,
-           defaults={'text': 'is cool'})
-def the_p_snake(text):
+@app.route('/python/<text>', strict_slashes=False)
+def the_p_snake(text='is cool'):
     ftext = text.replace('_', ' ')
-    return f'Python {ftext}'
+    text = ftext
+    return f'Python {text}'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
