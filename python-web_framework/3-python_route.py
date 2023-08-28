@@ -26,14 +26,11 @@ def c(text):
 def the_p_snake(text=None):
     if text is None:
         text = 'is cool'
-    
-    ftext = text.replace('_', ' ')
-    return f'Python {ftext}'
-
-
-@app.errorhandler(404)
-def not_found(e):
-    return "Python is cool"
+    try:
+        ftext = text.replace('_', ' ')
+        return f'Python {ftext}'
+    except Exception as e:
+        return 'Python is cool'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
