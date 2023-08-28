@@ -37,11 +37,5 @@ def the_p_snake(text=None):
 def not_found(e):
     return "Python is cool"
 
-
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def default_response(path):
-    abort(404)
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
