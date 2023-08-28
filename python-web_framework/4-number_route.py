@@ -33,7 +33,7 @@ def the_p_snake(text=None):
         return 'Python is cool'
 
 
-@app.route('/number/<int:n>')
+@app.route('/number/<int:n>', strict_slash=False)
 def number(n):
     if isinstance(n, int):
         return n
