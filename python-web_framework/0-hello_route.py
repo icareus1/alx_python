@@ -1,3 +1,6 @@
+"""Script that starts a Flask web application & displays a value(str)"""
+
+
 from flask import Flask
 
 app = Flask(__name__)
