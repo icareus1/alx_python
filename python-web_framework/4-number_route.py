@@ -35,10 +35,7 @@ def the_p_snake(text=None):
 
 @app.route('/number/<int:n>', strict_slash=False)
 def number(n):
-    if isinstance(n, int):
-        return n
-    else:
-        raise TypeError('n must be an integer')
+    return n
 
 
 @app.errorhandler(404)
