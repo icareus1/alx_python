@@ -35,7 +35,7 @@ def the_p_snake(text=None):
 
 @app.errorhandler(404)
 def not_found(e):
-    return "Python is cool"
+    return "Python is cool", 404
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
