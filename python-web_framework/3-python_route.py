@@ -28,7 +28,7 @@ def the_p_snake(text='is cool'):
         ftext = text.replace('_', ' ')
         result = f'Python {ftext}'
     except Exception as e:
-        result = 'Python is cool'
+        result = f'Python is cool'
     return result
 
 if __name__ == '__main__':
