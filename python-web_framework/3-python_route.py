@@ -29,6 +29,7 @@ def the_p_snake(text='is cool'):
         result = f'Python {ftext}'
     except Exception as e:
         result = 'Python is cool'
+    return result
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
