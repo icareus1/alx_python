@@ -22,7 +22,8 @@ def c(text):
     return f'C {ftext}'
 
 
-@app.route('/python/<text>', strict_slashes=False, defaults={'text': 'is cool'})
+@app.route('/python/<text>', strict_slashes=False,
+           defaults={'text': 'is cool'})
 def the_p_snake(text):
     ftext = text.replace('_', ' ')
     return f'Python {ftext}'
