@@ -1,4 +1,7 @@
-"""Script that starts a Flask web application & displays a value"""
+"""
+Script that starts a Flask web application & displays a value
+The value can be either a string or an integer
+"""
 
 
 from flask import Flask
