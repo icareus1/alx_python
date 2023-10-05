@@ -1,4 +1,5 @@
 import csv
+import os
 import requests
 import sys
 
@@ -22,16 +23,16 @@ def get_todo_items(employee_id):
         print(f"Error: {e}")
         return []
 
-# Function to get the employee's name
-def get_employee_name(employee_id):
+# Function to get the employee's username
+def get_employee_username(employee_id):
     """
-    Retrieve the name of an employee from a remote API.
+    Retrieve the username of an employee from a remote API.
 
     Args:
         employee_id (int): The ID of the employee.
 
     Returns:
-        str: The name of the employee.
+        str: The username of the employee.
     """
     try:
         url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
@@ -59,7 +60,7 @@ def main():
         print("No TODO items found for this employee.")
         return
 
-    emp_name = get_employee_name(emp_id)
+    emp_username = get_employee_username(emp_id)
     csv_filename = f"{emp_id}.csv"
     
     # Open the CSV file for writing
@@ -72,10 +73,17 @@ def main():
             task_title = item["title"]
             writer.writerow({
                 "USER_ID": emp_id,
-                "USERNAME": emp_name,
+                "USERNAME": emp_username,
                 "TASK_COMPLETED_STATUS": completed_status,
                 "TASK_TITLE": task_title
             })
+
+    # Remove the blank line at the end of the file
+    with open(csv_filename, 'rb+') as csv_file:
+        csv_file.seek(-2, os.SEEK_END)
+        csv_file.truncate()
+
+    print(f"Data exported to {csv_filename}")
 
 if __name__ == "__main__":
     main()
