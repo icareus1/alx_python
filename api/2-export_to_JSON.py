@@ -54,8 +54,9 @@ def get_employee_name(employee_id):
 # Main function
 def main():
     """
-    Main function to export employee's TODO list in JSON format.
+    Main function to display an employee's completed TODO tasks.
     """
+    # Check if an employee ID is provided
     if len(sys.argv) < 2:
         print("Please provide the employee ID as a command-line argument.")
         return
@@ -68,29 +69,25 @@ def main():
         return
 
     emp_name = get_employee_name(emp_id)
-    json_filename = f"{emp_id}.json"
+    
+    # Create a dictionary with the expected JSON structure
+    employee_json = {
+        str(emp_id): [
+            {
+                "task": item["title"],
+                "completed": item["completed"],
+                "username": emp_name
+            }
+            for item in todo_items
+        ]
+    }
 
+    # Specify the JSON file path
+    json_file_path = f'{emp_id}.json'
 
-    # Create a dictionary to store the data in the specified format
-    employee_data = {str(emp_id): []}
-
-    for item in todo_items:
-        completed_status = False if not item["completed"] else True
-        task_title = item["title"]
-        data_entry = {
-            "task": task_title,
-            "completed": completed_status,
-            "username": emp_name
-        }
-        employee_data[str(emp_id)].append(data_entry)
-
-    # Convert the data to JSON format
-    json_data = json.dumps(employee_data)
-
-    # Write the JSON data to a file named EMPLOYEE_ID.json
-    json_filename = f"{emp_id}.json"
-    with open(json_filename, "w") as json_file:
-        json_file.write(json_data)
+    # Write the JSON data to the file
+    with open(json_file_path, 'w') as json_file:
+        json.dump(employee_json, json_file)
 
 if __name__ == "__main__":
     main()
