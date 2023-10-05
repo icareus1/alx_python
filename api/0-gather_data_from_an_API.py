@@ -71,7 +71,7 @@ def main():
 
     for item in todo_items:
         if item["completed"]:
-            print(f"\t{item['title']}")
+            print(f"\t {item['title']}")
 
 if __name__ == "__main__":
     main()
