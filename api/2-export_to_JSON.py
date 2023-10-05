@@ -72,7 +72,7 @@ def main():
 
     # Prepare JSON data
     json_data = {
-        "USER_ID": [{
+        emp_id: [{
             "task": item["title"],
             "completed": item["completed"],
             "username": emp_name
@@ -81,7 +81,7 @@ def main():
 
     # Write JSON data to the file
     with open(json_filename, 'w') as json_file:
-        json.dump(json_data, json_file, indent=4)
+        json.dump(json_data, json_file)
 
 if __name__ == "__main__":
     main()
