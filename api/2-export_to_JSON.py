@@ -70,18 +70,27 @@ def main():
     emp_name = get_employee_name(emp_id)
     json_filename = f"{emp_id}.json"
 
-    # Prepare JSON data
-    json_data = {
-        emp_id: [{
-            "task": item["title"],
-            "completed": item["completed"],
-            "username": emp_name
-        } for item in todo_items]
-    }
 
-    # Write JSON data to the file
-    with open(json_filename, 'w') as json_file:
-        json.dump(json_data, json_file)
+    # Create a dictionary to store the data in the specified format
+    employee_data = {str(emp_id): []}
+
+    for item in todo_items:
+        completed_status = False if not item["completed"] else True
+        task_title = item["title"]
+        data_entry = {
+            "task": task_title,
+            "completed": completed_status,
+            "username": emp_name
+        }
+        employee_data[str(emp_id)].append(data_entry)
+
+    # Convert the data to JSON format
+    json_data = json.dumps(employee_data)
+
+    # Write the JSON data to a file named EMPLOYEE_ID.json
+    json_filename = f"{emp_id}.json"
+    with open(json_filename, "w") as json_file:
+        json_file.write(json_data)
 
 if __name__ == "__main__":
     main()
