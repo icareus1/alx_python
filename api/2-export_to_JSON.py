@@ -4,6 +4,15 @@ import sys
 
 # Function to get TODO list items for an employee
 def get_todo_items(employee_id):
+    """
+    Retrieve TODO list items for an employee from a remote API.
+
+    Args:
+        employee_id (int): The ID of the employee.
+
+    Returns:
+        list: A list of TODO list items (dictionaries).
+    """
     try:
         url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
         response = requests.get(url)
@@ -15,6 +24,15 @@ def get_todo_items(employee_id):
 
 # Function to get the employee's name
 def get_employee_name(employee_id):
+    """
+    Retrieve the name of an employee from a remote API.
+
+    Args:
+        employee_id (int): The ID of the employee.
+
+    Returns:
+        str: The name of the employee.
+    """
     try:
         url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
         response = requests.get(url)
@@ -26,6 +44,9 @@ def get_employee_name(employee_id):
 
 # Main function
 def main():
+    """
+    Main function to export employee's TODO list in JSON format.
+    """
     if len(sys.argv) < 2:
         print("Please provide the employee ID as a command-line argument.")
         return
