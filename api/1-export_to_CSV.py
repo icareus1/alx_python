@@ -73,6 +73,13 @@ def main():
         fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames, quoting=csv.QUOTE_ALL)
 
+        writer.writerow({
+            "USER_ID": emp_id,
+            "USERNAME": emp_name,
+            "TASK_COMPLETED_STATUS": "TASK_COMPLETED_STATUS",
+            "TASK_TITLE": "TASK_TITLE"
+        })
+
         for item in todo_items:
             completed_status = "True" if item["completed"] else "False"
             task_title = item["title"]
