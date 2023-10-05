@@ -1,5 +1,5 @@
 import csv
-import os
+# import os
 import requests
 import sys
 
@@ -63,10 +63,10 @@ def main():
     emp_name = get_employee_name(emp_id)
     csv_filename = f"{emp_id}.csv"
     
-    # Check if the CSV file already exists
-    if os.path.exists(csv_filename):
-        print(f"Data already exported to {csv_filename}")
-        return
+    # # Check if the CSV file already exists
+    # if os.path.exists(csv_filename):
+    #     print(f"Data already exported to {csv_filename}")
+    #     return
 
     # Open the CSV file for writing
     with open(csv_filename, mode='w', newline='') as csv_file:
