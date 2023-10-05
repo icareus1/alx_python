@@ -66,23 +66,27 @@ def main():
 
     emp_name = get_employee_name(emp_id)
     
-    # Create a dictionary with the expected JSON structure
+    # Create a list of dictionaries in the format specified
+    output_data = [
+        {
+            "task": item["title"],
+            "completed": item["completed"],
+            "username": emp_name
+        }
+        for item in todo_items
+    ]
+
+    # Create a dictionary for the final JSON structure
     employee_json = {
-        str(emp_id): [
-            {
-                "task": item["title"],
-                "completed": item["completed"],
-                "username": emp_name
-            }
-            for item in todo_items
-        ]
+        str(emp_id): output_data
     }
 
     # Specify the JSON file path
     json_file_path = f'{emp_id}.json'
 
-    # Write the JSON data to the file
+    # Open the JSON file in write mode
     with open(json_file_path, 'w') as json_file:
+        # Serialize and write the data to the JSON file
         json.dump(employee_json, json_file)
 
 if __name__ == "__main__":
