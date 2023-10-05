@@ -53,10 +53,6 @@ def get_employee_name(employee_id):
 
 # Main function
 def main():
-    """
-    Main function to display an employee's completed TODO tasks.
-    """
-    # Check if an employee ID is provided
     if len(sys.argv) < 2:
         print("Please provide the employee ID as a command-line argument.")
         return
