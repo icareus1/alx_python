@@ -60,7 +60,7 @@ def main():
 
     # Create a dictionary for the final JSON structure
     employee_json = {
-        emp_id: output_data
+        str(emp_id): output_data
     }
 
     # Specify the JSON file path
