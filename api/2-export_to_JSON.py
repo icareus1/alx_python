@@ -48,6 +48,7 @@ def main():
 
     emp_name = get_employee_name(emp_id)
     output_data = []
+    
     # Create a list of dictionaries in the format specified
     for item in todo_items:
         data = {
@@ -59,7 +60,7 @@ def main():
     
     # Create a dictionary for the final JSON structure
     employee_json = {
-        str(emp_id): output_data
+        emp_id: output_data
     }
 
     # Specify the JSON file path
