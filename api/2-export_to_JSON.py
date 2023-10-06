@@ -47,17 +47,16 @@ def main():
         return
 
     emp_name = get_employee_name(emp_id)
-    
+    output_data = []
     # Create a list of dictionaries in the format specified
-    output_data = [
-        {
+    for item in todo_items:
+        data = {
             "task": item["title"],
             "completed": item["completed"],
             "username": emp_name
         }
-        for item in todo_items
-    ]
-
+        output_data.append(data)
+    
     # Create a dictionary for the final JSON structure
     employee_json = {
         str(emp_id): output_data
