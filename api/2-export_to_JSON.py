@@ -33,51 +33,43 @@ def get_employee_name(employee_id):
         print(f"Error: {e}")
         return "Unknown"
 
-# Function to export TODO list items to JSON
-def export_to_json(emp_id, emp_name, todo_items):
-    """
-    Export TODO list items to JSON.
-
-    Args:
-        emp_id (int): The ID of the employee.
-        emp_name (str): The name of the employee.
-        todo_items (list): A list of TODO list items (dictionaries).
-    """
-
-    # Create a JSON object
-    json_data = {
-        str(emp_id): [
-            {
-                "task": item["title"],
-                "completed": item["completed"],
-                "username": emp_name,
-            }
-            for item in todo_items
-        ]
-    }
-
-    # Write the JSON object to a file
-    with open(f"{emp_id}.json", "w") as f:
-        json.dump(json_data, f)
-
 # Main function
 def main():
-    # Check if an employee ID is provided
     if len(sys.argv) < 2:
         print("Please provide the employee ID as a command-line argument.")
         return
 
     emp_id = int(sys.argv[1])
     todo_items = get_todo_items(emp_id)
-
+    
     if not todo_items:
         print("No TODO items found for this employee.")
         return
 
     emp_name = get_employee_name(emp_id)
+    
+    # Create a list of dictionaries in the format specified
+    output_data = [
+        {
+            "task": item["title"],
+            "completed": item["completed"],
+            "username": emp_name
+        }
+        for item in todo_items
+    ]
 
-    # Export TODO list items to JSON
-    export_to_json(emp_id, emp_name, todo_items)
+    # Create a dictionary for the final JSON structure
+    employee_json = {
+        emp_id: output_data
+    }
+
+    # Specify the JSON file path
+    json_file_path = f'{emp_id}.json'
+
+    # Open the JSON file in write mode
+    with open(json_file_path, 'w') as json_file:
+        # Serialize and write the data to the JSON file
+        json.dump(employee_json, json_file)
 
 if __name__ == "__main__":
     main()
