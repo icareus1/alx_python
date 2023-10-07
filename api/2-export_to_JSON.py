@@ -33,7 +33,7 @@ def get_employee_name(employee_id):
         print(f"Error: {e}")
         return "Unknown"
 
-# Main function
+#Main function
 def main():
     if len(sys.argv) < 2:
         print("Please provide the employee ID as a command-line argument.")
