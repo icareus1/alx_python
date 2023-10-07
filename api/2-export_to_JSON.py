@@ -50,16 +50,17 @@ def main():
     employee_name = get_employee_name(emp_id)
 
     # Prepare the data to be exported
+
     data = {
-        str(emp_id): []
+        str(emp_id): [
+                {
+                "task": item["title"],
+                "completed": item["completed"],
+                "username": employee_name
+                }
+                for item in todo_items
+        ]
     }
-    
-    for item in todo_items:
-        data[str(emp_id)].append({
-            "task": item["title"],
-            "completed": item["completed"],
-            "username": employee_name
-        })
 
     # Export the data to JSON
     with open(f"{emp_id}.json", "w") as file:
