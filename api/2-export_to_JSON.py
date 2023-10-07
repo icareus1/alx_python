@@ -46,30 +46,25 @@ def main():
         print("No TODO items found for this employee.")
         return
 
-    emp_name = get_employee_name(emp_id)
-    output_data = []
-    
-    # Create a list of dictionaries in the format specified
-    for item in todo_items:
-        data = {
-            "task": item["title"],
-            "completed": item["completed"],
-            "username": emp_name
-        }
-        output_data.append(data)
-    
-    # Create a dictionary for the final JSON structure
-    employee_json = {
-        emp_id: output_data
+    # Get the employee's name
+    employee_name = get_employee_name(emp_id)
+
+    # Prepare the data to be exported
+    data = {
+        str(emp_id): [
+            {
+                "task": item["title"],
+                "completed": item["completed"],
+                "username": employee_name
+            }
+            for item in todo_items
+        ]
     }
 
-    # Specify the JSON file path
-    json_file_path = f'{emp_id}.json'
-
-    # Open the JSON file in write mode
-    with open(json_file_path, 'w') as json_file:
-        # Serialize and write the data to the JSON file
-        json.dump(employee_json, json_file)
+    # Export the data to JSON
+    filename = f"{emp_id}.json"
+    with open(filename, "w") as file:
+        json.dump(data, file)
 
 if __name__ == "__main__":
     main()
